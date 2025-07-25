@@ -23,7 +23,7 @@ export default function SingleBlogPage({ params: paramsPromise }) {
   useEffect(() => {
     const fetchBlog = async () => {
       try {
-        const res = await axios.get(`${process.env.NEXT_PUBLIC_BACKEND_URL}/v1/blogs/${id}`)
+        const res = await axios.get(`${process.env.NEXT_PUBLIC_BACKEND_URL}/api/v1/blogs/${id}`)
         if (res.data.success) setBlog(res.data.data)
         else setError("Blog not found")
       } catch (err) {
@@ -44,7 +44,7 @@ export default function SingleBlogPage({ params: paramsPromise }) {
       const token = localStorage.getItem("token")
       // console.log("Sending token:", token);
       const res = await axios.post(
-        `${process.env.NEXT_PUBLIC_BACKEND_URL}/v1/blogs/${id}`,
+        `${process.env.NEXT_PUBLIC_BACKEND_URL}/api/v1/blogs/${id}`,
         { comment: commentText },
         { headers: { Authorization: `Bearer ${token}` } }
       )

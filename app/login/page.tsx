@@ -29,7 +29,7 @@ export default function LoginPage() {
     // console.log("Backend URL:", process.env.NEXT_PUBLIC_BACKEND_URL);
 
     try {
-      const res = await fetch(`${process.env.NEXT_PUBLIC_BACKEND_URL}/v1/users/login`, {
+      const res = await fetch(`${process.env.NEXT_PUBLIC_BACKEND_URL}/api/v1/users/login`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(formData),

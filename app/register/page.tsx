@@ -47,7 +47,7 @@ export default function RegisterPage() {
       form.append("email", formData.email)
       form.append("password", formData.password)
 
-      const response = await fetch(`${process.env.NEXT_PUBLIC_BACKEND_URL}/v1/users/register`, {
+      const response = await fetch(`${process.env.NEXT_PUBLIC_BACKEND_URL}/api/v1/users/register`, {
         method: "POST",
         body: form, // Let the browser set the headers automatically
       })
